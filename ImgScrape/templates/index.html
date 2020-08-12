@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Google HD image scrapper</title>
+  <link rel="stylesheet" href="static/index.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="container">
+  <div id="toggleText"  style="display: none">
+
+  <label id="l2" for="water">
+    <div id="fill"></div>
+  </label>
+  <span>Loading...</span>
+    <span id="progress"></span>
+</div>
+
+  <div id="myDIV">
+
+    <div class="main-block">
+      <h1>Google HQ Image Scrapper</h1>
+      <form action="/download" method="post" onsubmit="move()">
+        <hr>
+
+
+        <label  for="name">Name of Image</label>
+        <input type="text" name="search_string" id="name" placeholder="Image Name" required/><hr>
+
+
+<hr>
+        <label  for="name">Image Quantity</label>
+        <input type="number" value="5" name="quantity" max="15" min="1" required >
+        <hr>
+
+        <div class="btn-block">
+
+            <button type="submit">SEARCH</button>
+        </div>
+                  <p>
+            <label><h5>Maximun Images are limited to 15 to avoid misuse..</h5></label>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  </div>
+
+</div>
+<!-- partial -->
+  <script type="text/javascript">
+  function move() {
+  var ele = document.getElementById("toggleText");
+  var x = document.getElementById("myDIV");
+  x.style.display = "none";
+  ele.style.display = "block";
+}
+
+function validateForm() {
+  var x = document.forms["myForm"]["quantity"].value;
+  if (x < 0 || x > 20) {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+  </script>
+
+</body>
+</html>

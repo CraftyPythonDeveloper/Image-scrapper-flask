@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results</title>
+  <link rel="stylesheet" href="static/index.css">
+
+</head>
+<body>
+<div class="main">
+   <div class="header"><h2 style="color: white">Scrapped high quality Images<h2> </div>
+    <table>
+
+
+
+        <tbody>
+                {% for i in user_images %}
+    <tr>
+                {% for j in i %}
+        <td width="400">
+           <center> <a href={{ url_for('static', filename=j) }} target="_blank">
+            <img width="400" height="400" src="{{ url_for('static', filename=j) }}" alt="User Image">
+            </a>
+            <a href={{ url_for('static', filename=j) }} target="_blank" download>
+               <button type="button">DOWNLOAD</button>
+            </a>
+            </center>
+        </td>
+{% endfor %}
+</tr>
+
+{% endfor %}
+            <tbody>
+
+    </table>
+
+</div>
+</body>
+</html>
